@@ -1,8 +1,9 @@
-import {ADD, DELETE, UNDONE,DONE, EDIT, } from './types'
+import {ADD, DELETE, UNDONE, DONE, EDIT,FILTER_DONE_TASCK, FILTER_UNDONE_TASCK, CHECK_DONE_TASCK } from './types'
+
 export const add=(newTask)=>{
     return{
         type:ADD,
-        payload:{newTask}
+        payload:newTask
     }
 }
 export const efface=(id)=>{
@@ -16,13 +17,25 @@ export const undone=()=>{
         type:UNDONE,
     }
 }
-export const done=()=>{
+export const done=(id)=>{
     return{
-        type:EDIT,
+        type:CHECK_DONE_TASCK,
+        payload:id
     }
 }
-export const edit=()=>{
+export const edit=(id, edittask)=>{
     return{
         type:EDIT,
+        payload:{id:id,edittask},
     }
+}
+export const filterDone=()=>{
+    return{
+     type:FILTER_DONE_TASCK
+ }
+}
+ export const filterUndone=()=>{
+     return{
+    type:FILTER_UNDONE_TASCK
+}
 }
