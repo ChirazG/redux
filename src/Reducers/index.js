@@ -1,3 +1,3 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 import taskReducer from './taskReducer'
-export default combineReducers({taskReducer})
+export default combineReducers({ taskReducer })

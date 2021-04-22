@@ -1,30 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { add } from '../Actions/taskActions';
 import { v4 as uuidv4 } from 'uuid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Addtask = ({ handeltask }) => {
-    /*const initialTask = useSelector(initaialTask=> state.taskReducer)*/
+const Addtask = () => {
     const dispatch = useDispatch()
     const [task, setTask] = useState({
         description: "",
         id: uuidv4(),
         isDone: false
     })
-  /*const [add, setAdd] = useState(false)*/
     const handelchange = (e) => {
-        setTask({ ...task , description: e.target.value })
-      
-
+        setTask({ ...task, description: e.target.value })
     }
-    const handeladd=(e)=>{
-        
-        e.preventDefault()/*prevent reload*/ 
-        
+    const handeladd = (e) => {
+        e.preventDefault()/*prevent reload*/
         dispatch(add(task))
-           
-           setTask({
+        setTask({
             description: "",
             id: uuidv4(),
             isDone: false

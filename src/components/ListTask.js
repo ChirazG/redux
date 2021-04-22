@@ -1,10 +1,7 @@
 import React from 'react'
 import Task from './Task'
-import { useSelector, useDispatch } from 'react-redux'
-import { Container, Row } from "react-bootstrap";
-
-
-
+import { useSelector } from 'react-redux'
+import { Container } from "react-bootstrap";
 
 const ListTask = ({ choix }) => {
     const initialTasks = useSelector(state => state.taskReducer)
@@ -18,16 +15,10 @@ const ListTask = ({ choix }) => {
     }
     return (
         <div>
-        <Container>
-            {affiche(choix)}
-        </Container>
+            <Container>
+                {affiche(choix)}
+            </Container>
         </div>
     );
 }
-
-
 export default ListTask
-    /*return (
-        <div>
-            {/*tasks.map(task => {
-            return  <Task el={el} choix={choix} />*/
